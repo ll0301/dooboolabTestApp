@@ -8,6 +8,7 @@ import ChartEx2 from '../shared/ChartEx2';
 // 현재 스크린의 전체화면
 const Container = styled.View`
   flex: 1;  
+  background-color: #dcdcdc;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
