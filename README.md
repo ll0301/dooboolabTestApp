@@ -11,7 +11,7 @@
   > <img src="./Image/testapp1.jpg" width="30%" height="25%"></img>
   > <img src="./Image/testapp2.jpg" width="30%" height="25%"></img>
   > <img src="./Image/testapp3.jpg" width="30%" height="25%"></img>   
-  > 메인화면 소스코드 
+  > 메인화면 소스코드    
   > <https://github.com/ll0301/dooboolabTestApp/blob/master/TestApp/src/components/screen/Intro.tsx>    
 * * *
   > #### 1번 그래프
