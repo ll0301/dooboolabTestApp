@@ -4,7 +4,7 @@
 >dooboo-cli : <https://github.com/dooboolab/dooboo-cli>   
 >web-expo : <https://docs.expo.io/>   
 >dooboo-cli를 이용하여 expo 프로젝트 생성하여 expo web으로 개발    
-><img src="./Image/dooboolab-web-expo.gif" width="30%" height="25%"></img>
+><img src="./Image/dooboolab-web-expo.gif"></img>
 * * *
 ### 화면 
   > #### 완성
@@ -14,11 +14,7 @@
 * * *
   > #### 1번 그래프
   > <img src="./Image/chart1.JPG" width="30%" height="25%"></img>
-  > ##### ChartEx1.tsx    
-  >  * 
 * * *
   > #### 2번 그래프
   > <img src="./Image/chart2.JPG" width="30%" height="25%"></img>
-  > ##### ChartEx1.tsx    
-  >  * 
 * * *
