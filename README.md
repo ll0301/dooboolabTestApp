@@ -19,5 +19,5 @@
 * * *
   > #### 2번 그래프
   > <img src="./Image/chart2.JPG" width="30%" height="25%"></img>    
-  > 2번  소스코드 <https://github.com/ll0301/dooboolabTestApp/blob/master/TestApp/src/components/shared/ChartEx2.tsx>   
+  > 2번 그래프 소스코드 <https://github.com/ll0301/dooboolabTestApp/blob/master/TestApp/src/components/shared/ChartEx2.tsx>   
 * * *
