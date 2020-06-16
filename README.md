@@ -10,12 +10,12 @@
   > <img src="./Image/testapp3.jpg" width="30%" height="25%"></img>   
 * * *
   > #### 1번 그래프
-  > <img src="./Image/chart1.jpg" width="30%" height="25%"></img>
+  > <img src="./Image/chart1.JPG" width="30%" height="25%"></img>
   > ##### ChartEx1.tsx    
   >  * 
 * * *
   > #### 2번 그래프
-  > <img src="./Image/chart2.jpg" width="30%" height="25%"></img>
+  > <img src="./Image/chart2.JPG" width="30%" height="25%"></img>
   > ##### ChartEx1.tsx    
   >  * 
 * * *
