@@ -6,15 +6,11 @@ import { View, Dimensions } from 'react-native';
 Scalable Vector Graphics의 줄임말 
 마크업 언어로 벡터 기반의 그래픽을 표현하는 라이브러리이다.
 XML의 문법을 그대로 이용할 수 있다. */
-import { Svg, G, Rect, Text, Circle } from 'react-native-svg';
+import { Svg, G, Line, Text, Circle } from 'react-native-svg';
 
 /* 데이터 시각화 프레임워크
 SVG를 통하여 다양한 화면 해상도에서 깨짐없는 Visualizing이 가능하다. */
 import * as d3 from 'd3';
-import { line, curveMonotoneX } from 'd3-shape';
-import { extent } from 'd3-array';
-import { transition } from 'd3-transition';
-import { scaleLinear, scaleBand } from 'd3-scale';
 
 // 전체 컨테이너
 const Container = styled.View`
@@ -96,20 +92,19 @@ const StyledText = styled.Text`
 `;
 
 const GRAPH_MARGIN = 1
-const GRAPH_BAR_WIDTH = 1
-const colors = {
-  axis: '#E4E4E4',
-  bars: '#6738e6'
-}
 const data = [
-  { label: '6일차', value: 400 },
-  { label: '5일차', value: 500 },
-  { label: '4일차', value: 400 },
-  { label: '3일차', value: 200 },
-  { label: '2일차', value: 400 },
-  { label: '1일차', value: 300 },
-  { label: '금일', value: 200 }
+  { label: 1, value: 400 },
+  { label: 2, value: 500 },
+  { label: 3, value: 400 },
+  { label: 4, value: 200 },
+  { label: 5, value: 400 },
+  { label: 6, value: 300 },
+  { label: 7, value: 600 }
 ]
+// Circle의 x좌표
+const circleVectorX = new Array
+// Circle의 y좌표
+const circleVectorY = new Array
 
 // Dimensions
 const SVGHeight = Dimensions.get('screen').height * 0.2
@@ -139,6 +134,19 @@ interface Props {
 }
 
 function ChartEx1(props: Props): React.ReactElement {
+  // d3 라이브러리를 활용한 circle의 x,y 좌표 추출하여 저장 
+  data.map(
+    item => circleVectorX.push(x(item.label))    
+  );
+  data.map(
+    item => circleVectorY.push(y(item.value)*-0.7)
+  );
+  // 마지막에 X,Y 값을 동일하게 추가하면서 자기 자신을 지목하여 끝나도록 함 
+  circleVectorX.push(circleVectorX[6]);
+  circleVectorY.push(circleVectorY[6]);
+  //console.log(circleVectorX);
+  //console.log(circleVectorY);
+  
   return (    
     <Container>
 
@@ -152,15 +160,22 @@ function ChartEx1(props: Props): React.ReactElement {
       {/* 그래프가 들어갈 view */}
       <ChartWrapper>
       <Svg width={SVGWidth} height={SVGHeight}>
-        <G y={graphHeight}>                                               
-          {/* Text */}
+        <G y={graphHeight}>                                                         
+          {/* Text -> 지연된 장기 수 */}
           {data.map(item => (
             <Text                        
-            x={x(item.label)-3}
+            x={x(item.label)}
             y={y(item.value) * -0.9}
             fill="#00a0ec">{item.value/100}</Text>
-          ))}
-          {/* circle */}
+          ))}         
+          {/* Line */} 
+          {data.map(item => (
+            <Line 
+            x1={x(item.label)} 
+            y1={y(item.value) * -0.7} 
+            x2={circleVectorX[item.label]} y2={circleVectorY[item.label]} stroke="#00a0ec" strokeWidth="2" />            
+          ))} 
+          {/* Circle */}
           {data.map(item => (            
             <Circle              
             cx={x(item.label)}
